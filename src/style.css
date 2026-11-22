@@ -1,19 +1,22 @@
 
 /* =========================================
-   JÉRICHO SHIELD - FOREST SURVIVAL
-   Feuille de style principale
+   SION — IDENTITÉ VISUELLE
+   Foi · Nature · Aventure
 ========================================= */
 
-/* 1. VARIABLES ET BASE */
-
 :root {
-  --forest-dark: #101812;
-  --forest-medium: #19271d;
-  --forest-light: #263a2b;
-  --green: #718b65;
-  --orange: #d9823b;
-  --white: #f2f3ed;
-  --text-muted: #b5beb3;
+  --forest: #263b2d;
+  --forest-dark: #19291f;
+  --forest-light: #405a43;
+  --wood: #594638;
+  --bronze: #a77b45;
+  --beige: #e9e1d1;
+  --cream: #f7f4ec;
+  --white: #ffffff;
+  --text: #343b32;
+  --muted: #77796f;
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: Arial, Helvetica, sans-serif;
 }
 
 * {
@@ -28,10 +31,9 @@ html {
 }
 
 body {
-  min-width: 320px;
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--white);
-  background: var(--forest-dark);
+  font-family: var(--sans);
+  color: var(--text);
+  background: var(--cream);
   line-height: 1.7;
 }
 
@@ -40,296 +42,311 @@ a {
   text-decoration: none;
 }
 
-section {
-  scroll-margin-top: 80px;
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* 2. BARRE DE NAVIGATION */
+/* =========================================
+   NAVIGATION
+========================================= */
 
 .site-header {
   position: sticky;
   top: 0;
   z-index: 1000;
   width: 100%;
-  background: rgba(13, 21, 15, 0.95);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(31, 49, 36, 0.97);
   backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .navbar {
-  width: 100%;
-  max-width: 1450px;
-  min-height: 76px;
+  width: min(1400px, 92%);
+  min-height: 86px;
   margin: auto;
-  padding: 12px 5%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 30px;
 }
 
-/* Logo */
-
 .logo {
-  flex-shrink: 0;
-  color: var(--white);
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: 2px;
+  color: var(--beige);
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 5px;
 }
-
-.logo span {
-  color: var(--green);
-}
-
-/* Liens du menu */
 
 .nav-links {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: 32px;
+  gap: 27px;
   list-style: none;
 }
 
-.nav-links a {
-  position: relative;
-  color: #e1e7df;
-  font-size: 14px;
-  font-weight: 600;
+.nav-links a,
+.footer-links a,
+.footer-info a {
   transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
-  color: var(--orange);
+.nav-links a {
+  color: #f3eee4;
+  font-size: 0.88rem;
 }
 
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--orange);
-  transition: width 0.3s ease;
+.nav-links a:hover,
+.footer-links a:hover,
+.footer-info a:hover {
+  color: #d5b17b;
 }
 
-.nav-links a:hover::after {
-  width: 100%;
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  white-space: nowrap;
 }
 
-/* 3. SECTION D'ACCUEIL */
-/* 
+.nav-button,
+.nav-shop {
+  padding: 10px 18px;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.nav-button {
+  color: var(--forest-dark);
+  background: var(--beige);
+}
+
+.nav-button:hover {
+  background: var(--bronze);
+  color: white;
+}
+
+.nav-shop {
+  color: var(--beige);
+  border: 1px solid rgba(233, 225, 209, 0.5);
+}
+
+.nav-shop:hover {
+  background: var(--beige);
+  color: var(--forest-dark);
+}
+
+/* =========================================
+   GRANDE IMAGE D'ACCUEIL
+========================================= */
+
 .hero {
-  min-height: 78vh;
+  position: relative;
+  min-height: 690px;
+  min-height: min(780px, 85vh);
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  text-align: center;
+  color: white;
+  padding: 100px 24px;
   overflow: hidden;
-  padding: 80px 25px;
 
   background:
-    radial-gradient(
-      ellipse at 50% 80%,
-      rgba(79, 103, 67, 0.25),
-      transparent 60%
+    linear-gradient(
+      rgba(17, 31, 21, 0.42),
+      rgba(17, 31, 21, 0.75)
     ),
-    linear-gradient(
-      135deg,
-      #101812 0%,
-      #1b2c20 50%,
-      #0c130e 100%
-    );
-} */
- .hero {
-  min-height: 78vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  padding: 80px 25px;
-
-  background:
-    linear-gradient(
-      rgba(8, 15, 10, 0.45),
-      rgba(8, 15, 10, 0.65)
-    ),
-    url('/jericho-shield/Refuge%20forestier%20au%20cr%C3%A9puscule.png');
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(8, 15, 10, 0.5),
-      transparent 50%,
-      rgba(8, 15, 10, 0.5)
-    );
+    url("https://images.unsplash.com/photo-1478131143081-80f7f84ca84d")
+    center 55% / cover no-repeat;
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
   max-width: 850px;
-  text-align: center;
 }
 
-.hero-subtitle {
-  color: var(--orange);
-  font-size: 13px;
+.hero-subtitle,
+.section-eyebrow {
+  color: #d3b17d;
+  font-size: 0.8rem;
   font-weight: bold;
-  letter-spacing: 5px;
-  margin-bottom: 25px;
+  letter-spacing: 4px;
 }
 
 .hero h1 {
-  font-size: clamp(42px, 8vw, 85px);
-  line-height: 1.15;
-  letter-spacing: 5px;
-  font-weight: 900;
-  margin-bottom: 25px;
+  margin: 20px 0 8px;
+  font-family: var(--serif);
+  font-size: clamp(4.5rem, 12vw, 8.5rem);
+  font-weight: normal;
+  letter-spacing: 15px;
+  line-height: 1.1;
 }
 
-.hero-content > p:not(.hero-subtitle) {
-  max-width: 650px;
-  margin: 0 auto 35px;
-  color: var(--text-muted);
-  font-size: 18px;
+.hero-slogan {
+  font-family: var(--serif);
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  color: #f1e6d2;
 }
 
-/* Bouton d'accueil */
+.hero-description {
+  max-width: 620px;
+  margin: 25px auto 35px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.05rem;
+}
 
 .btn-primary {
   display: inline-block;
-  padding: 14px 30px;
-  background: var(--green);
+  padding: 15px 30px;
+  background: var(--bronze);
   color: white;
-  border: 1px solid var(--green);
-  border-radius: 4px;
-  font-weight: bold;
+  border: 1px solid var(--bronze);
+  border-radius: 3px;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
   transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-  background: var(--orange);
-  border-color: var(--orange);
+  background: transparent;
+  color: white;
+  border-color: #e0c59e;
   transform: translateY(-3px);
 }
 
-/* 4. SECTIONS DE CONTENU */
+.hero-scroll {
+  position: absolute;
+  bottom: 25px;
+  left: 0;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* =========================================
+   SECTIONS
+========================================= */
 
 .content-section {
-  max-width: 1200px;
-  margin: auto;
-  padding: 100px 35px;
+  padding: 105px 24px;
   text-align: center;
+  background: var(--cream);
+}
+
+.content-section:nth-of-type(even) {
+  background: var(--beige);
+}
+
+.section-eyebrow {
+  margin-bottom: 18px;
+  color: var(--bronze);
 }
 
 .content-section h2 {
-  position: relative;
-  display: inline-block;
-  margin-bottom: 30px;
-  color: var(--white);
-  font-size: clamp(27px, 4vw, 38px);
+  max-width: 850px;
+  margin: 0 auto 25px;
+  color: var(--forest);
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: normal;
+  line-height: 1.25;
 }
 
-.content-section h2::after {
-  content: "";
-  display: block;
-  width: 55px;
-  height: 3px;
-  margin: 15px auto 0;
-  background: var(--orange);
+.content-section > p:not(.section-eyebrow) {
+  max-width: 760px;
+  margin: 0 auto 18px;
+  color: var(--muted);
+  font-size: 1rem;
 }
 
-.content-section > p {
-  max-width: 750px;
-  margin: auto;
-  color: var(--text-muted);
-  font-size: 17px;
+/* =========================================
+   NOS CAMPS
+========================================= */
+
+.camps-section {
+  background: #e6e0d3 !important;
 }
 
-/* Alternance des fonds */
-
-#mission,
-#boutique,
-#parole-du-jour {
-  max-width: none;
-  background: var(--forest-medium);
+.globe-placeholder {
+  width: min(650px, 100%);
+  min-height: 270px;
+  margin: 45px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  border: 1px solid rgba(167, 123, 69, 0.35);
+  border-radius: 6px;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(167, 123, 69, 0.12),
+      transparent 65%
+    ),
+    var(--forest);
+  color: var(--beige);
+  font-family: var(--serif);
+  font-size: 1.2rem;
 }
 
-#mission > *,
-#boutique > *,
-#parole-du-jour > * {
-  max-width: 750px;
+/* =========================================
+   CONTACT
+========================================= */
+
+#contact {
+  background: var(--forest);
 }
 
-/* 5. CARTE INTERACTIVE */
-
-.map-section {
-  max-width: 1300px;
-  padding: 100px 35px;
+#contact h2 {
+  color: var(--beige);
 }
 
-.map-section > p {
-  margin-bottom: 35px;
+#contact > p:not(.section-eyebrow) {
+  color: rgba(255, 255, 255, 0.75);
 }
 
-#map {
-  width: 100%;
-  height: 500px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 10px;
-  overflow: hidden;
-  background: #263a2b;
+#contact .btn-primary {
+  margin-top: 20px;
 }
 
-/* 6. ESPACE MEMBRE */
-
-#connexion {
-  background: #151f18;
-}
-
-/* 7. PIED DE PAGE */
+/* =========================================
+   PIED DE PAGE
+========================================= */
 
 .site-footer {
-  background: #0a100c;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 55px 5% 20px;
+  padding: 65px 24px 20px;
+  background: var(--forest-dark);
+  color: var(--beige);
 }
 
 .footer-content {
-  max-width: 1300px;
+  width: min(1200px, 100%);
   margin: auto;
   display: flex;
   justify-content: space-between;
-  gap: 50px;
+  gap: 45px;
   flex-wrap: wrap;
-  padding-bottom: 40px;
+  padding-bottom: 45px;
 }
 
 .footer-brand h2 {
-  color: var(--white);
-  font-size: 22px;
-  letter-spacing: 2px;
-  margin-bottom: 8px;
+  font-family: var(--serif);
+  font-size: 2rem;
+  letter-spacing: 5px;
+  font-weight: normal;
 }
 
 .footer-brand p {
-  color: var(--green);
-  font-size: 13px;
+  margin-top: 8px;
+  color: #c2b9a8;
+  font-family: var(--serif);
+  font-style: italic;
 }
 
 .footer-links,
@@ -337,100 +354,79 @@ section {
   display: flex;
   flex-direction: column;
   gap: 12px;
-}
-
-.footer-links a,
-.footer-info a {
-  color: var(--text-muted);
-  font-size: 14px;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover,
-.footer-info a:hover {
-  color: var(--orange);
+  font-size: 0.9rem;
+  color: #ded8cb;
 }
 
 .footer-bottom {
-  max-width: 1300px;
-  margin: auto;
   padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #a9aa9f;
+  font-size: 0.8rem;
 }
 
-.footer-bottom p {
-  color: #829083;
-  font-size: 12px;
-}
+/* =========================================
+   TABLETTES
+========================================= */
 
-/* 8. ADAPTATION TABLETTE */
-
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
   .navbar {
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    padding: 15px 0;
+    gap: 18px;
   }
 
   .nav-links {
     justify-content: center;
     flex-wrap: wrap;
-    gap: 15px 25px;
-  }
-
-  .hero {
-    min-height: 65vh;
-  }
-
-  .content-section {
-    padding: 75px 25px;
+    gap: 15px 22px;
   }
 }
 
-/* 9. ADAPTATION MOBILE */
+/* =========================================
+   MOBILES
+========================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   .navbar {
-    padding: 15px;
+    width: 94%;
+    gap: 14px;
   }
 
   .logo {
-    font-size: 20px;
+    font-size: 1.8rem;
   }
 
   .nav-links {
+    width: 100%;
     gap: 12px 18px;
   }
 
   .nav-links a {
-    font-size: 12px;
+    font-size: 0.8rem;
+  }
+
+  .nav-actions {
+    gap: 12px;
   }
 
   .hero {
-    min-height: 65vh;
-    padding: 60px 20px;
+    min-height: 650px;
+    padding: 80px 20px;
   }
 
   .hero h1 {
-    letter-spacing: 2px;
+    letter-spacing: 9px;
   }
 
-  .hero-subtitle {
-    font-size: 11px;
-    letter-spacing: 3px;
-  }
-
-  .hero-content > p:not(.hero-subtitle) {
-    font-size: 15px;
+  .hero-description {
+    font-size: 0.95rem;
   }
 
   .content-section {
-    padding: 65px 20px;
-  }
-
-  #map {
-    height: 380px;
+    padding: 75px 22px;
   }
 
   .footer-content {
@@ -439,16 +435,15 @@ section {
   }
 }
 
-/* 10. ACCESSIBILITÉ : LIMITER LES ANIMATIONS */
+/* =========================================
+   ACCESSIBILITÉ
+========================================= */
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
   *,
   *::before,
   *::after {
+    scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
   }
