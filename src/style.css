@@ -120,7 +120,7 @@ section {
 }
 
 /* 3. SECTION D'ACCUEIL */
-
+/* 
 .hero {
   min-height: 78vh;
   display: flex;
@@ -142,6 +142,26 @@ section {
       #1b2c20 50%,
       #0c130e 100%
     );
+} */
+ .hero {
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 80px 25px;
+
+  background:
+    linear-gradient(
+      rgba(8, 15, 10, 0.45),
+      rgba(8, 15, 10, 0.65)
+    ),
+    url('/jericho-shield/Refuge%20forestier%20au%20cr%C3%A9puscule.png');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero::before {
